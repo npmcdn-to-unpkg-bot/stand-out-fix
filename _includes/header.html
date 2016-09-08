@@ -1,0 +1,63 @@
+<!--<nav class="navbar container-fluid" id="header">
+  <div class="col-xs-10">
+    <div class="navbar-fixed-top">
+      <div class="navbar-header col-xs-12">
+        <a class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">MENU</a>
+      </div>
+      <div class="collapse navbar-collapse container" id="bs-example-navbar-collapse-1">
+        <div class="row">
+          <div class="col-xs-12 col-sm-10"  style="margin-left: auto;margin-right: auto;float: none;">
+            <div class="row">
+              <ul class="nav navbar-nav row">
+              <li>
+                <a href="{{ register.url | prepend: site.baseurl }}" {% if page.url == "/" %}class="active"{% endif %}>Home</a>
+              </li>
+              <li>
+                <a href="{{ speakers.url | prepend: site.baseurl }}" {% if page.url == "/" %}class="active"{% endif %}>Events</a>
+              </li>
+              <li>
+                <a href="{{ sponsors.url | prepend: site.baseurl }}" {% if page.url == "/" %}class="active"{% endif %}>Speakers</a>
+              </li>
+              <li>
+                <a href="{{ specials.url | prepend: site.baseurl }}" {% if page.url == "/" %}class="active"{% endif %}>Sponsors</a>
+              </li>
+              <li>
+                <a href="{{ get-inspired.url | prepend: site.baseurl }}" {% if page.url == "/" %}class="active"{% endif %}>Get Inspired</a>
+              </li>
+              <li>
+                <a href="{{ contact-us.url | prepend: site.baseurl }}" {% if page.url == "/" %}class="active"{% endif %}>Contact</a>
+              </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>-->
+
+
+
+
+<nav class="cbp-hsmenu-wrapper" id="cbp-hsmenu-wrapper">
+	<div class="cbp-hsinner">
+		<ul class="cbp-hsmenu">
+      <li><a href="{{ site.baseurl }}">Home</a></li>
+      <li>
+      	<a href="#">Lovely Spirits</a>
+      	<ul class="cbp-hssubmenu">
+					<li><a href="{{ '/dallas' | prepend: site.baseurl }}"><span>Dallas</span></a></li>
+					<li><a href="{{ '/chicago' | prepend: site.baseurl }}"><span>Chicago</span></a></li>
+					<li><a href="{{ '/toronto' | prepend: site.baseurl }}"><span>Toronto</span></a></li>
+					<li><a href="{{ '/los-angeles' | prepend: site.baseurl }}"><span>Los Angeles</span></a></li>
+					<li><a href="{{ '/phoenix' | prepend: site.baseurl }}"><span>Phoenix</span></a></li>
+				</ul>
+			</li>
+			<li><a href="{{ '/speakers' | prepend: site.baseurl }}">Speakers</a></li>
+			<li><a href="{{ '/sponsors' | prepend: site.baseurl }}">Sponsors</a></li>
+      <li><a href="{{ '/get-inspired' | prepend: site.baseurl }}">Get Inspired</a></li>
+      <li><a href="#">Buy Ticket</a></li>
+      <li><a href="{{ '/dallas' | prepend: site.baseurl }}">Contact Us</a></li>
+		</ul>
+	</div>
+</nav>

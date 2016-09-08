@@ -1,0 +1,191 @@
+<form id="profileForm" class="form-horizontal">
+    <div class="form-group">
+
+        <div class="col-xs-6">
+            <input type="text" class="form-control" name="firstName" placeholder="First name" />
+        </div>
+
+        <div class="col-xs-6">
+            <input type="text" class="form-control" name="lastName" placeholder="Last name" />
+        </div>
+    </div>
+
+    <div class="form-group">
+
+        <div class="col-xs-6">
+            <input type="email" class="form-control" name="email" placeholder="Email" />
+        </div>
+
+        <div class="col-xs-6">
+            <input type="text" class="form-control" name="phone" placeholder="Phone" />
+        </div>
+    </div>
+
+    <div class="form-group">
+
+        <div class="col-xs-12">
+            <input type="text" class="form-control" name="address" placeholder="Address" />
+        </div>
+
+    </div>
+
+    <div class="form-group">
+
+        <div class="col-xs-8">
+            <input type="text" class="form-control" name="address" placeholder="Address" />
+        </div>
+
+        <div class="col-xs-4">
+            <input type="text" class="form-control" name="line-2" placeholder="Address Line 2" />
+        </div>
+
+    </div>
+
+    <div class="form-group">
+
+        <div class="col-xs-8">
+            <input type="text" class="form-control" name="City" placeholder="City" />
+        </div>
+
+        <div class="col-xs-2">
+            <input type="text" class="form-control" name="State" placeholder="State" />
+        </div>
+
+        <div class="col-xs-2">
+            <input type="text" class="form-control" name="Zip" placeholder="Zip" />
+        </div>
+
+    </div>
+
+    <p>Please provide information about the digital back(s) you are bringing in for service.
+    IMPORTANT NOTE: Serial Numbers are required for registration so that we can accurately track equipment and expedite service.</p>
+
+
+    <div class="form-group">
+
+        <div class="col-xs-6">
+            <input type="text" class="form-control" name="model-1" placeholder="Digital Back/Model Number" />
+        </div>
+
+        <div class="col-xs-6">
+            <input type="text" class="form-control" name="serial-1" placeholder="Serial Number" />
+        </div>
+    </div>
+
+    <div class="form-group">
+
+        <div class="col-xs-6">
+            <input type="text" class="form-control" name="model-2" placeholder="Digital Back/Model Number" />
+        </div>
+
+        <div class="col-xs-6">
+            <input type="text" class="form-control" name="serial-2" placeholder="Serial Number" />
+        </div>
+    </div>
+
+    <div class="form-group">
+
+        <div class="col-xs-6">
+            <input type="text" class="form-control" name="model-3" placeholder="Digital Back/Model Number" />
+        </div>
+
+        <div class="col-xs-6">
+            <input type="text" class="form-control" name="serial-3" placeholder="Serial Number" />
+        </div>
+    </div>
+
+    <div class="form-group">
+
+        <div class="col-xs-6">
+            <input type="text" class="form-control" name="model-4" placeholder="Digital Back/Model Number" />
+        </div>
+
+        <div class="col-xs-6">
+            <input type="text" class="form-control" name="serial-4" placeholder="Serial Number" />
+        </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-xs-2 control-label">Do you have an issue with your equipment that you would like us to know about?</label>
+        <div class="col-xs-6">
+            <input type="text-box" class="form-control" name="issue" placeholder="" />
+        </div>
+    </div>
+
+<div class="form-group">
+    Important Note: Digital backs and camera bodies must have protective covers in place. We cannot accept equipment that does not have protective covers.
+    Please do not leave any accessories,  we cannot be responsible for those items.
+    Bring your digital backs and camera bodies only. Service applies to digital backs and camera bodies only.
+    Models and Serial Numbers are mandatory in order to efficiently process complimentary service.
+</div>
+    <div class="form-group">
+        <div class="col-xs-6 col-xs-offset-2">
+            <!-- Do NOT use name="submit" or id="submit" for the Submit button -->
+            <button type="submit" class="btn btn-primary">Sign Up</button>
+        </div>
+    </div>
+
+</form>
+
+<script>
+$(document).ready(function() {
+    $('#profileForm').formValidation({
+        framework: 'bootstrap',
+        icon: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            firstName: {
+                row: '.col-xs-6',
+                validators: {
+                    notEmpty: {
+                        message: 'The first name is required'
+                    },
+                    regexp: {
+                        regexp: /^[a-zA-Z\s]+$/,
+                        message: 'The first name can only consist of alphabetical and space'
+                    }
+                }
+            },
+            lastName: {
+                row: '.col-xs-6',
+                validators: {
+                    notEmpty: {
+                        message: 'The last name is required'
+                    },
+                    regexp: {
+                        regexp: /^[a-zA-Z\s]+$/,
+                        message: 'The last name can only consist of alphabetical and space'
+                    }
+                }
+            },
+            phone: {
+                row: '.col-xs-6',
+                validators: {
+                    notEmpty: {
+                        message: 'The cell phone number is required'
+                    }
+                }
+            },
+            email: {
+                row: '.col-xs-6',
+                validators: {
+                    notEmpty: {
+                        message: 'The email is required'
+                    }
+                }
+            },
+            cityAttending: {
+                row: '.col-xs-12',
+                validators: {
+                    notEmpty: {
+                        message: 'Please tell us which event you will be attenting.'
+                    }
+                }
+            }
+        }
+    });
+});
+</script>

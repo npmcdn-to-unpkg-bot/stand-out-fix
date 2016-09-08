@@ -1,0 +1,81 @@
+<!-- jQuery Version 1.12.2 -->
+
+<script src="{{ "/js/jquery.min.js" | prepend: site.baseurl }}"></script>
+<script src="{{ "/js/bootstrap.js" | prepend: site.baseurl }}"></script>
+<script src="{{ "/js/misc.js" | prepend: site.baseurl }}"></script>
+<script src="{{ "/bower_components/jquery-background-video/jquery.background-video.js" | prepend: site.baseurl }}"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/animsition/4.0.2/js/animsition.min.js"></script>
+<script src="https://cdn.jsdelivr.net/scrollreveal.js/3.3.1/scrollreveal.min.js"></script>
+<script src="https://use.typekit.net/djc3asi.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+<!-- FormValidation CSS file -->
+<link rel="stylesheet" href="{{ "/bower_components/formvalidation/dist/css/formValidation.min.css" | prepend: site.baseurl }}">
+<!-- FormValidation plugin and the class supports validating Bootstrap form -->
+<script src="{{ "/bower_components/formvalidation/dist/js/formValidation.min.js" | prepend: site.baseurl }}"></script>
+<script src="{{ "/bower_components/formvalidation/dist/js/framework/bootstrap.min.js" | prepend: site.baseurl }}"></script>
+
+
+
+<script>
+$(document).ready(function() {
+    $('#profileForm').formValidation({
+        framework: 'bootstrap',
+        icon: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            firstName: {
+                row: '.col-xs-6',
+                validators: {
+                    notEmpty: {
+                        message: 'The first name is required'
+                    },
+                    regexp: {
+                        regexp: /^[a-zA-Z\s]+$/,
+                        message: 'The first name can only consist of alphabetical and space'
+                    }
+                }
+            },
+            lastName: {
+                row: '.col-xs-6',
+                validators: {
+                    notEmpty: {
+                        message: 'The last name is required'
+                    },
+                    regexp: {
+                        regexp: /^[a-zA-Z\s]+$/,
+                        message: 'The last name can only consist of alphabetical and space'
+                    }
+                }
+            },
+            phone: {
+                row: '.col-xs-6',
+                validators: {
+                    notEmpty: {
+                        message: 'The cell phone number is required'
+                    }
+                }
+            },
+            email: {
+                row: '.col-xs-6',
+                validators: {
+                    notEmpty: {
+                        message: 'The email is required'
+                    }
+                }
+            },
+            cityAttending: {
+                row: '.col-xs-12',
+                validators: {
+                    notEmpty: {
+                        message: 'Please tell us which event you will be attenting.'
+                    }
+                }
+            }
+        }
+    });
+});
+</script>

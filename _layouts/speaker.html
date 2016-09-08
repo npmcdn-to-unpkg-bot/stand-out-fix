@@ -1,0 +1,49 @@
+---
+layout: default
+---
+
+<div class="container-fluid page-content">
+  <ul>
+    {% for speaker in site.speakers %}
+    <li>
+      <div class="row">
+        <div class="col-xs-12 col-sm-4">
+          <img src="{{ speaker.headshot }}" />
+        </div>
+        <div class="col-xs-10 col-sm-8">
+          <div class="row" style="position:relative;">
+            <div class="col-xs-12">
+            <h1 style="text-transform: uppercase;margin-bottom:0px;line-height:1;"><a href="{{ page.url }}">{{ speaker.title }}</a></h1>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <p>{{ speaker.bio }}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 speaker-social">
+            {% if speaker.facebook-url %}<a href="{{ facebook-url }}"><i class="fa fa-facebook-f fa-sm"></i></a>{% endif %}
+            {% if speaker.instagram-url %}<a href="{{ instagram-url }}"><i class="fa fa-instagram fa-sm"></i></a>{% endif %}
+            {% if speaker.youtube-url %}<a href="{{ page.youtube-url }}"><i class="fa fa-youtube-play fa-sm"></i></a>{% endif %}
+            {% if speaker.vimeo-url %}<a href="{{ page.vimeo-url }}"><i class="fa fa-vimeo fa-sm"></i></a>{% endif %}
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-top:60px;">
+        <div class="col-xs-12 col-sm-2">
+          <img src="{{ speaker.featured-image }}" />
+        </div>
+        <div class="col-xs-12 col-sm-10">
+          {% for seminar in site.seminars %}
+          {% if seminar.speaker == speaker.title %}
+          <h3>"{{ seminar.title }}"</h3>
+          <p>{{ seminar.desc }}</p>
+          {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </li>
+  {% endfor %}
+  </ul>
+</div>

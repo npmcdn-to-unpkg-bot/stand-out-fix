@@ -1,0 +1,42 @@
+---
+title: Sponsors
+layout: default
+permalink: '/sponsors'
+---
+
+<div class="container">
+<div class="col-xs-12" style="padding-top:70px;" id="sponsors">
+  <div class="row">
+    <div class="col-xs-12">
+      <h4 style="margin-bottom:20px;">Stand Out Photo Forum is generously sponsored by:</h4>
+    </div>
+  </div>
+  <ul padding-bottom:60px;>
+    {% for sponsor in site.sponsors %}
+    <li class="row sponsor" style="margin-bottom:40px;margin-top:20px;">
+      <div class="row">
+        <div class="col-xs-12 col-sm-2">
+          {% if sponsor.image %}
+          <a href="{{ sponsor.link }}" class="animsition-link"><img src="{{ sponsor.image | prepend:site.baseurl }}" style="padding-right:20px;"/></a>
+          {% endif %}
+        </div>
+        <div class="col-xs-12 col-sm-10">
+          {% if sponsor.desc %}
+          <p class="small">{{ sponsor.desc }}</p>
+          {% endif %}
+          <div class="row">
+            <div class="col-xs-12 col-sm-5 sponsor-social">
+              <div class="col-xs-12 sponsor-social">
+                {% if sponsor.facebook-url %}<a href="{{ facebook-url }}"><i class="fa fa-facebook-f fa-sm"></i></a>{% endif %}
+                {% if sponsor.instagram-url %}<a href="{{ instagram-url }}"><i class="fa fa-instagram fa-sm"></i></a>{% endif %}
+                {% if sponsor.youtube-url %}<a href="{{ page.youtube-url }}"><i class="fa fa-youtube-play fa-sm"></i></a>{% endif %}
+                {% if sponsor.vimeo-url %}<a href="{{ page.vimeo-url }}"><i class="fa fa-vimeo fa-sm"></i></a>{% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
